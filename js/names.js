@@ -29,3 +29,20 @@
       you add a new person object to the array
  */
 
+document.addEventListener('DOMContentLoaded', function() {
+    'use strict;'
+
+    var array = [];
+
+    document.getElementById("add-name-button").addEventListener("click", function() {
+        var first = document.getElementById("first-name").value;
+        var last = document.getElementById("last-name").value;
+        var name = first + " " + last;
+        array.push(name);
+
+        var list = document.getElementById("people-list");
+        var li = document.createElement("li");
+        li.textContent = name;
+        list.appendChild(li);
+    });
+});
